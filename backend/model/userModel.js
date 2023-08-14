@@ -1,14 +1,38 @@
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 
-// const goalSchema = mongoose.Schema({
-//     text:{
-//         type:String,
-//         required:[true,'Please add a text field']
-//     }},{
-//         timestamps:true
-//     } )
+const userSchema = mongoose.Schema(
+   {
+     
+        user:{
+   type:mongoose.Schema.Types.ObjectId,
+   required:true,
+   ref:'User'
+        },
+    name:{
+        type:String,
+        required:[true,'Please add a name field']
+    },
+    
+      email:{
+        type:String,
+        required:[true,'Please add an email field'],
+        // unique:true
+    },
+    
+    
+      password:{
+        type:String,
+        required:[true,'Please add a password field'],
+    },
+
+    
+        
+     
+   }
+    
+    )
 
 
-//     module.exports = mongoose.model('Goal',goalSchema)
+    module.exports = mongoose.model('User',userSchema)
 

@@ -3,6 +3,7 @@ const dotenv = require("dotenv").config();
 const {errorHandler} = require('./middleware/errorMiddleware')
 const morgan = require("morgan");
 const goalRouter = require('./routes/goalRoutes')
+const userRouter = require('./routes/userRoutes')
 const connectDB = require('./config/db');
 
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(morgan("dev"));
 
 app.use('/api/v1/goals',goalRouter)
+app.use('/api/v1/users',userRouter)
 
 
 app.use(errorHandler)
