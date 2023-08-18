@@ -6,7 +6,8 @@ const Goal = require('../model/goalModel')
 //@access Private
 
 exports.getAllGoals = asyncHandler(async (req,res,next)=>{
-    const goals = await Goal.find();
+    //  const { _id, name, email } = await User.findById(req.user.id);
+    const goals = await Goal.find(req.user.id);
     
     res.status(200).json({
         status:'success',

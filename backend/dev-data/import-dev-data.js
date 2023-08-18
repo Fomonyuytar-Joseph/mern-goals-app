@@ -8,7 +8,7 @@ const express = require("express");
 const app = express();
 
 
-console.log(require("dotenv").config());
+// console.log(require("dotenv").config("../.env"));
 
 
 
